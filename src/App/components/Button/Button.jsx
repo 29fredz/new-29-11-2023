@@ -16,6 +16,9 @@ Button.propTypes={
             top:PropTypes.string
         })
     })
+}
 
+Button.defaultProps={
+    type:'button'
 }
 export default Button;
