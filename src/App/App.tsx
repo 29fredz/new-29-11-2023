@@ -10,7 +10,7 @@ function App() {
         <Button text="Salut !" type="button" />
         <Button text="Holla !" type="submit" />
         <Button text="Hi !" type="reset" />
-        <Button text="Hello !"/>
+        <Button text="Hello !" size={{margin: {right:"25px", left:"3px"}}} />
     </div>
   );
 }
