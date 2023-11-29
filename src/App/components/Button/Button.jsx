@@ -7,7 +7,7 @@ const Button = (props) => {
 
     const [clicked, setclicked] = useState({isClicked:false, info2:"coucou"});
 
-    return <button type={props.type} className={styles.Button+" "+(clicked.isClicked?styles.clicked:"")} onClick={(evt) => {
+    return <button type={props.type} className={styles.Button+(clicked.isClicked?" "+styles.clicked:"")} onClick={(evt) => {
         props.onBoutonClick();
         setclicked({...clicked, isClicked:true});
         setTimeout(()=>setclicked({...clicked, isClicked:false}), 350)
