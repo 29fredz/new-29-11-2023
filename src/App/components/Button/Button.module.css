@@ -17,3 +17,8 @@
     cursor:pointer;
 
 }
+
+.clicked {
+    box-shadow: 5px 5px 35px grey !important;
+    border: 1px solid black !important;
+}
