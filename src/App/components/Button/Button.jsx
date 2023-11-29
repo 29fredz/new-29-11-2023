@@ -22,7 +22,7 @@ const Button = (props) => {
     }, [clicked])
 
     return <button type={props.type} className={styles.Button+(clicked.isClicked?" "+styles.clicked:"")} onClick={(evt) => {
-        props.onBoutonClick();
+        if(props.onBoutonClick !== undefined) props.onBoutonClick();
         setclicked({...clicked, isClicked:true});
      }}>{props.text}</button>
 }
