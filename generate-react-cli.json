@@ -10,7 +10,22 @@
       "withStyle": true,
       "withTest": true,
       "withStory": true,
-      "withLazy": true
+      "withLazy": true,
+      "customTemplates": {
+        "component":"template/generic_function/TemplateName.jsx"
+      }
+    },
+    "layout": {
+      "path": "src/App/components/layouts",
+      "withStyle": true,
+      "withTest": true,
+      "withStory": true,
+      "withLazy": true,
+      "customTemplates": {
+        "component":"template/generic_layout/TemplateName.jsx",
+        "style":"template/generic_layout/TemplateName.module.css",
+        "test":"template/generic_layout/TemplateName.test.jsx"
+      }
     }
   }
 }
