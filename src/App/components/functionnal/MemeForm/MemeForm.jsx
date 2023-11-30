@@ -34,11 +34,9 @@ const MemeForm = (props) => {
           <h2>Image</h2>
         </label>
         <br />
-        <select name="image" id="image">
-          <option value="1">futurama1.jpg</option>
-          <option value="2">futurama2.png</option>
-          <option value="3">futurama3.png</option>
-          <option value="4">gwenadu.jpg</option>
+        <select name="image" id="image" value={props.meme.imageId} onChange={(evt) => props.ChangeMeme({...props.meme, imageId:Number(evt.target.value)})}>
+          <option value="-1">pas d'image</option>
+          {props.images.map((image, index) => <option value={image.id} key={index} >{image.titre}</option>)}
         </select>
         <hr />
         <label htmlFor="text">
@@ -113,7 +111,7 @@ const MemeForm = (props) => {
           min="0"
           value={props.meme.frameSizeX} onChange={SetNumberStateFromInput}
         />
-        px{" "}
+        px
         <label htmlFor="frameSizeY">
           <h2 className={styles.inline}>frame size y :</h2>
         </label>
@@ -136,7 +134,8 @@ const MemeForm = (props) => {
 
 MemeForm.propTypes = {
   meme: PropTypes.object.isRequired,
-  ChangeMeme: PropTypes.func.isRequired
+  ChangeMeme: PropTypes.func.isRequired,
+  images:PropTypes.array.isRequired,
 };
 MemeForm.defaultProps = {};
 

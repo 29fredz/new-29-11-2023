@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import Header from './components/uis/Header/Header';
 import Navbar from './components/uis/Navbar/Navbar';
@@ -8,9 +8,15 @@ import FlexWGrow1 from './components/layouts/FlexWGrow1/FlexWGrow1';
 import MemeSvgViewer from './components/uis/MemeSvgViewer/MemeSvgViewer';
 import MemeForm from './components/functionnal/MemeForm/MemeForm';
 import {emptyMeme} from 'orsys-tjs-meme'
+import { RESSOURCES_NAME, REST_ADDR } from '../config';
 
 const App = (props) => {
-    const [current, setcurrent] = useState(emptyMeme)
+    const [current, setcurrent] = useState(emptyMeme);
+    const [images, setimages] = useState([]);
+
+    useEffect(() => {
+      fetch(`${REST_ADDR}${RESSOURCES_NAME.images}`).then(r=>r.json()).then(arr=>setimages(arr));
+    }, [])
 
   return (
     <div className="App" data-testid="App">
@@ -19,7 +25,7 @@ const App = (props) => {
         <Navbar />
         <FlexWGrow1>
           <MemeSvgViewer meme={current}/>
-          <MemeForm meme={current} ChangeMeme={(meme) => setcurrent({...current,...meme})}/>
+          <MemeForm meme={current} ChangeMeme={(meme) => setcurrent({...current,...meme})} images={images}/>
         </FlexWGrow1>
         <Footer />
       </FlexHGrow3>
