@@ -5,7 +5,7 @@ import TemplateName from './TemplateName';
 
 describe('<TemplateName />', () => {
   test('it should mount', () => {
-    render(<TemplateName></TemplateName>);
+    render(<TemplateName>child</TemplateName>);
     
     const templateName = screen.getByTestId('TemplateName');
 
