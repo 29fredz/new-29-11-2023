@@ -126,7 +126,7 @@ const MemeForm = (props) => {
           value={props.meme.frameSizeY} onChange={SetNumberStateFromInput}
         />
         px
-        <br />
+        <br /><br/><hr/><br/>
         <Button type="submit" text="Valider" ColorClass="green" />
         <Button type="reset" text="Annuler"/>
       </form>
