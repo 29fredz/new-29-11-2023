@@ -3,10 +3,11 @@ import PropTypes from "prop-types";
 import styles from "./MemeForm.module.css";
 import Button from "../../uis/Button/Button";
  
+let initstate;
+ 
 const MemeForm = (props) => {
-  const [initstate, setinitstate] = useState(props.meme)
   useEffect(() => {
-    setinitstate(props.meme);
+    initstate = props.meme;
   }, [])
 
   const SetStringStateFromInput = (evt) => {
