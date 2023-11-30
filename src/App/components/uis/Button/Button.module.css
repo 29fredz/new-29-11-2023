@@ -11,6 +11,10 @@
     color:white;
     background-color:red;
 }
+.green {
+    background-color:green;
+    
+}
 
 .Button:hover {
     box-shadow: 10px 10px 25px grey;

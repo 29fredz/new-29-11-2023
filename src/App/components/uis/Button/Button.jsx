@@ -21,7 +21,7 @@ const Button = (props) => {
        if(clicked.isClicked) setTimeout(()=>setclicked({...clicked, isClicked:false}), 350)
     }, [clicked])
 
-    return <button type={props.type} className={styles.Button+(clicked.isClicked?" "+styles.clicked:"")} onClick={(evt) => {
+    return <button type={props.type} className={styles.Button+(clicked.isClicked?" "+styles.clicked:"")+(props.ColorClass!==undefined?" "+styles[props.ColorClass]:"")} onClick={(evt) => {
         if(props.onBoutonClick !== undefined) props.onBoutonClick();
         setclicked({...clicked, isClicked:true});
      }}>{props.text}</button>
@@ -38,7 +38,8 @@ Button.propTypes={
             top:PropTypes.string
         })
     }),
-    onBoutonClick:PropTypes.func
+    onBoutonClick:PropTypes.func,
+    ColorClass:PropTypes.string
 }
 
 Button.defaultProps={

@@ -19,7 +19,7 @@ const App = (props) => {
         <Navbar />
         <FlexWGrow1>
           <MemeSvgViewer meme={current}/>
-          <MemeForm meme={current}/>
+          <MemeForm meme={current} ChangeMeme={(meme) => setcurrent({...current,...meme})}/>
         </FlexWGrow1>
         <Footer />
       </FlexHGrow3>
