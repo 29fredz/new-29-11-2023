@@ -6,10 +6,9 @@ import Footer from './components/uis/Footer/Footer';
 import FlexHGrow3 from './components/layouts/FlexHGrow3/FlexHGrow3';
 import FlexWGrow1 from './components/layouts/FlexWGrow1/FlexWGrow1';
 import MemeSvgViewer from './components/uis/MemeSvgViewer/MemeSvgViewer';
-import MemeForm from './components/functionnal/MemeForm/MemeForm';
+import { MemeFormHookConnected } from './components/functionnal/MemeForm/MemeForm';
 import {emptyMeme} from 'orsys-tjs-meme'
 import { RESSOURCES_NAME, REST_ADDR } from '../config';
-import { store } from './store/store'
 
 const App = (props) => {
     const [current, setcurrent] = useState(emptyMeme);
@@ -26,7 +25,7 @@ const App = (props) => {
         <Navbar />
         <FlexWGrow1>
           <MemeSvgViewer meme={current} image={images.find(i => i.id === current.imageId)}/>
-          <MemeForm meme={current} ChangeMeme={(meme) => setcurrent({...current,...meme})} images={images}/>
+          <MemeFormHookConnected meme={current} ChangeMeme={(meme) => setcurrent({...current,...meme})} />
         </FlexWGrow1>
         <Footer />
       </FlexHGrow3>
