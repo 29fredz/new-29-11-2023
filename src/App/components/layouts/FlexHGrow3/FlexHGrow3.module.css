@@ -2,6 +2,6 @@
     display:flex;
     flex-direction: column;
 }
-.FlexHGrow3>*:nth-child(3){
+.FlexHGrow3>*:nth-child(2){
     flex-grow: 1;
 }
