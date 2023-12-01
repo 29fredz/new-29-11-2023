@@ -41,7 +41,7 @@ export const loadImage = createAsyncThunk(
     const pr2 = await Promise.all([
       await fetch(`${REST_ADDR}${RESSOURCES_NAME.images}`),
       await fetch(`${REST_ADDR}${RESSOURCES_NAME.memes}`) ])
-    return await {images:await pr2[0].json(), memes:await pr2[1].json()};
+    return {images:await pr2[0].json(), memes:await pr2[1].json()};
   }
 )
 
