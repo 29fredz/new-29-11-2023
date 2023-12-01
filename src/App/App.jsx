@@ -9,6 +9,7 @@ import MemeSvgViewer from './components/uis/MemeSvgViewer/MemeSvgViewer';
 import MemeForm from './components/functionnal/MemeForm/MemeForm';
 import {emptyMeme} from 'orsys-tjs-meme'
 import { RESSOURCES_NAME, REST_ADDR } from '../config';
+import { store } from './store/store'
 
 const App = (props) => {
     const [current, setcurrent] = useState(emptyMeme);
