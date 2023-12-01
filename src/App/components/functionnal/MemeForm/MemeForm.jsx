@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import styles from "./MemeForm.module.css";
 import Button from "../../uis/Button/Button";
 import { useSelector, useDispatch } from "react-redux";
-import { update } from "../../../store/current";
+import { saveImage, update } from "../../../store/current";
  
 let initstate;
  
@@ -25,7 +25,7 @@ const MemeForm = (props) => {
 
   return (
     <div className={styles.MemeForm} data-testid="MemeForm">
-      <form onSubmit={(evt) => { evt.preventDefault();  }}  onReset={(evt) => {props.ChangeMeme(initstate)}}>
+      <form onSubmit={(evt) => { evt.preventDefault(); if(props.saveImage !== undefined) props.saveImage(); }}  onReset={(evt) => {props.ChangeMeme(initstate)}}>
         <label htmlFor="titre">
           <h1>Titre</h1>
         </label>
@@ -139,6 +139,7 @@ MemeForm.propTypes = {
   meme: PropTypes.object.isRequired,
   ChangeMeme: PropTypes.func.isRequired,
   images:PropTypes.array.isRequired,
+  saveImage:PropTypes.func
 };
 MemeForm.defaultProps = {};
 
@@ -149,7 +150,7 @@ export const MemeFormHookConnected = (props) => {
   const current = useSelector((s) => s.current);
   const dispatch = useDispatch();
   return (
-    <MemeForm {...props} meme={current} images={images} ChangeMeme={(meme)=> dispatch(update(meme))} />
+    <MemeForm {...props} meme={current} images={images} ChangeMeme={(meme)=> dispatch(update(meme))} saveImage={()=>dispatch(saveImage(current))} />
   )
 }
 

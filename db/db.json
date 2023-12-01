@@ -201,6 +201,51 @@
       "frameSizeX": 0,
       "frameSizeY": 0,
       "id": 10
+    },
+    {
+      "titre": "premier test",
+      "text": "test de meme",
+      "x": 62,
+      "y": 30,
+      "fontWeight": "500",
+      "fontSize": 32,
+      "underline": false,
+      "italic": true,
+      "imageId": 2,
+      "color": "#3827b9",
+      "frameSizeX": 0,
+      "frameSizeY": 0,
+      "id": 11
+    },
+    {
+      "titre": "",
+      "text": "Salut",
+      "x": 180,
+      "y": 60,
+      "fontWeight": "500",
+      "fontSize": 60,
+      "underline": false,
+      "italic": false,
+      "imageId": 0,
+      "color": "#ea0606",
+      "frameSizeX": 0,
+      "frameSizeY": 0,
+      "id": 12
+    },
+    {
+      "titre": "",
+      "text": "dhdr",
+      "x": 0,
+      "y": 17,
+      "fontWeight": "500",
+      "fontSize": 30,
+      "underline": false,
+      "italic": false,
+      "imageId": 0,
+      "color": "#000000",
+      "frameSizeX": 0,
+      "frameSizeY": 0,
+      "id": 13
     }
   ]
 }
