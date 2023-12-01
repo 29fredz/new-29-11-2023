@@ -24,7 +24,7 @@ const App = (props) => {
         <Header />
         <Navbar />
         <FlexWGrow1>
-          <MemeSvgViewer meme={current}/>
+          <MemeSvgViewer meme={current} image={images.find(i => i.id === current.imageId)}/>
           <MemeForm meme={current} ChangeMeme={(meme) => setcurrent({...current,...meme})} images={images}/>
         </FlexWGrow1>
         <Footer />
