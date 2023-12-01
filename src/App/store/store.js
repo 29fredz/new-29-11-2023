@@ -1,11 +1,12 @@
-import {configureStore} from '@reduxjs/toolkit'
-import ressourceReducer, { fillImages } from './ressources'
+import {configureStore, combineReducers} from '@reduxjs/toolkit'
+import ressourceReducer from './ressources'
+import currentReducer from './current'
 
 export const store = configureStore({
-    reducer:ressourceReducer,
+    reducer: combineReducers ({ressources:ressourceReducer, current: currentReducer}),
     devTools: true
 })
 
-store.subscribe(() => console.trace(store.getState()))
+//store.subscribe(() => console.trace(store.getState()))
 console.log('chargement du store');
 console.log(store.getState());

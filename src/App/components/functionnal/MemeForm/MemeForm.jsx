@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import styles from "./MemeForm.module.css";
 import Button from "../../uis/Button/Button";
 import { useSelector, useDispatch } from "react-redux";
+import { update } from "../../../store/current";
  
 let initstate;
  
@@ -144,10 +145,11 @@ MemeForm.defaultProps = {};
 export default MemeForm;
 
 export const MemeFormHookConnected = (props) => {
-  const images = useSelector((s) => s.images);
+  const images = useSelector((s) => s.ressources.images);
+  const current = useSelector((s) => s.current);
   const dispatch = useDispatch();
   return (
-    <MemeForm {...props} images={images} /*onMemeChange={(meme)=> dispatch(createOrUpdate(meme))} *//>
+    <MemeForm {...props} meme={current} images={images} ChangeMeme={(meme)=> dispatch(update(meme))} />
   )
 }
 

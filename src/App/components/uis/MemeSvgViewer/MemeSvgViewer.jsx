@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styles from "./MemeSvgViewer.module.css";
+import { useSelector } from "react-redux";
 
 
 const MemeSvgViewer = (props) => {
@@ -26,9 +27,21 @@ MemeSvgViewer.propTypes = {
     url:PropTypes.string.isRequired,
     w:PropTypes.number.isRequired,
     h:PropTypes.number.isRequired,
-    name:PropTypes.string.isRequired
+    titre:PropTypes.string.isRequired
   })
 };
 MemeSvgViewer.defaultProp = {};
 
 export default MemeSvgViewer;
+
+
+export const MemeSvgViewerHookConnected = (props) => {
+  const image = useSelector((s) => s.ressources.images.find(i=>i.id===s.current.imageId));
+  const current = useSelector((s) => s.current);
+
+  return (
+    <MemeSvgViewer meme={current} image={image} />
+  )
+}
+
+ // images.find(i => i.id === current.imageId)
